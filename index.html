@@ -1,0 +1,753 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;ruby&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-b1ec5028.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#peex-inbound-api-documentation" class="toc-h1 toc-link" data-title="Peex Inbound API Documentation">Peex Inbound API Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#security" class="toc-h2 toc-link" data-title="Security">Security</a>
+                  </li>
+                  <li>
+                    <a href="#resources" class="toc-h2 toc-link" data-title="Resources">Resources</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-partner-information" class="toc-h2 toc-link" data-title="Retrieve partner information">Retrieve partner information</a>
+                  </li>
+                  <li>
+                    <a href="#payment-request" class="toc-h2 toc-link" data-title="Payment Request">Payment Request</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-requests-of-a-client" class="toc-h2 toc-link" data-title="Get All requests of a client">Get All requests of a client</a>
+                  </li>
+                  <li>
+                    <a href="#formatting" class="toc-h2 toc-link" data-title="Formatting">Formatting</a>
+                  </li>
+                  <li>
+                    <a href="#possible-transaction-values" class="toc-h2 toc-link" data-title="Possible transaction values">Possible transaction values</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='http://www.peexit.com'>Documentation Powered by peexit</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='peex-inbound-api-documentation'>Peex Inbound API Documentation</h1>
+<p>This document contains instructions about the Peex platform Rest API (sandbox). The inbound is 
+intended to send transactions to Cameroon.</p>
+<h2 id='security'>Security</h2>
+<p>To access to these resources, you will need to use an access token (SECRETKEY). These secret key 
+must be set in your http request header. Your secret key will be send by mail for the production 
+environment. For now, you use the below key. 
+<strong>&quot;header-key&quot;:</strong> &quot;SECRETKEY&quot;, 
+&quot;value&quot;: <strong>&quot;37528871-1f6c-43e9-a74a-0ad1f4baba76&quot;</strong> 
+Remind: Just set it as an http header when callings the API.</p>
+<h2 id='resources'>Resources</h2>
+<p>For now, the platform exposes two resources : </p>
+
+<ul>
+<li><p><strong>clients model:</strong></p>
+
+<ul>
+<li><strong>&quot;name&quot;</strong></li>
+<li><strong>&quot;email&quot;</strong> </li>
+<li><strong>&quot;adress&quot;</strong> </li>
+<li><strong>&quot;web_site&quot;</strong> </li>
+<li><strong>&quot;description&quot;</strong></li>
+<li><strong>&quot;callback_url&quot;</strong> </li>
+<li><strong>&quot;sold&quot;</strong> </li>
+<li><strong>&quot;orange_fees&quot;</strong></li>
+<li><strong>&quot;mtn_fees&quot;</strong> </li>
+<li><strong>&quot;is_activated&quot;</strong></li>
+<li><strong>&quot;created_at&quot;</strong></li>
+<li><strong>&quot;updated_at&quot;</strong></li>
+</ul></li>
+<li><p><strong>Transaction model</strong></p>
+
+<ul>
+<li><strong>&quot;id&quot;</strong></li>
+<li><strong>&quot;amount&quot;</strong></li>
+<li><strong>&quot;status&quot;:</strong></li>
+<li><strong>&quot;from_currency&quot;</strong></li>
+<li><strong>&quot;to_currency&quot;</strong></li>
+<li><strong>&quot;created_at&quot;</strong></li>
+<li><strong>&quot;updated_at&quot;</strong></li>
+<li><strong>&quot;payment_proof&quot;</strong></li>
+<li><strong>&quot;identifier_by&quot;</strong></li>
+<li><strong>&quot;track_id&quot;</strong></li>
+<li><strong>&quot;type&quot;</strong></li>
+</ul></li>
+</ul>
+<h2 id='retrieve-partner-information'>Retrieve partner information</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code>
+<span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"json"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://dev-backend.peexit.com/api/v3/clients/me"</span><span class="p">)</span>
+
+<span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">https</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"ACCESS-TOKEN"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"{{token}}"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"SECRETKEY"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"ea5ebe38-c3cf-4655-999a-eb0c63805a76"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCESS-TOKEN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">{{token}}</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">SECRETKEY</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ea5ebe38-c3cf-4655-999a-eb0c63805a76</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://dev-backend.peexit.com/api/v3/clients/me</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div>
+<blockquote>
+<p>This is the response of the request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peex"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"infos@peexit.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bonamoussadi"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"web_site"</span><span class="p">:</span><span class="w"> </span><span class="s2">"peexit.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peers Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callback_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.peex-callback/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"solde"</span><span class="p">:</span><span class="w"> </span><span class="mf">1341.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orange_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mtn_fees"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-23T13:35:38.773Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-22T16:44:31.154Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This allow you to retrieve the information about you in our system, you will be able to see your balance, 
+and fees that is applicable for billings.</p>
+
+<ul>
+<li><strong>url:</strong> “{{base_url}}clients/me”</li>
+<li><strong>method:</strong> GET</li>
+<li><strong>params:</strong>
+
+<ul>
+<li>Nothing, just provide the secret key in the request header</li>
+</ul></li>
+<li><strong>Response:</strong>
+
+<ul>
+<li>Status 200: the result will contain information about you</li>
+<li>Status 401: this means you’re not authorized to make requests in the server may be you 
+have not provided a correct secret key, or your secret key is wrong</li>
+</ul></li>
+</ul>
+<h2 id='payment-request'>Payment Request</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCESS-TOKEN</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">{{token}}</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">SECRETKEY</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ea5ebe38-c3cf-4655-999a-eb0c63805a76</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="dl">"</span><span class="s2">track_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TEST202103019</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">aml_cft</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">fxrate</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">from_currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">XAF</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">to_currency</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">XAF</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">transaction_type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mobile</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">client_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">mobile_phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">+237675287689</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">sender_first_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">signe</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">sender_last_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">paul</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">sender_email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">raoulsigne@yahoo.fr</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">sender_mobile_phone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">+237675287689</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">sender_country</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CM</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">to_country</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CM</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">purpose</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Familial maintenance</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">fund_origin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Salary</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2"> https://dev-backend.peexit.com/api/v3/clients/request_payment</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code>
+<span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"json"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">" https://dev-backend.peexit.com/api/v3/clients/request_payment"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"ACCESS-TOKEN"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"{{token}}"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"SECRETKEY"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"ea5ebe38-c3cf-4655-999a-eb0c63805a76"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">dump</span><span class="p">({</span>
+  <span class="s2">"track_id"</span><span class="p">:</span> <span class="s2">"TEST202103019"</span><span class="p">,</span>
+  <span class="s2">"amount"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s2">"aml_cft"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"fxrate"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"from_currency"</span><span class="p">:</span> <span class="s2">"XAF"</span><span class="p">,</span>
+  <span class="s2">"to_currency"</span><span class="p">:</span> <span class="s2">"XAF"</span><span class="p">,</span>
+  <span class="s2">"transaction_type"</span><span class="p">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+  <span class="s2">"user_id"</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+  <span class="s2">"client_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"mobile_phone"</span><span class="p">:</span> <span class="s2">"+237675287689"</span><span class="p">,</span>
+  <span class="s2">"sender_first_name"</span><span class="p">:</span> <span class="s2">"signe"</span><span class="p">,</span>
+  <span class="s2">"sender_last_name"</span><span class="p">:</span> <span class="s2">"paul"</span><span class="p">,</span>
+  <span class="s2">"sender_email"</span><span class="p">:</span> <span class="s2">"raoulsigne@yahoo.fr"</span><span class="p">,</span>
+  <span class="s2">"sender_mobile_phone"</span><span class="p">:</span> <span class="s2">"+237675287689"</span><span class="p">,</span>
+  <span class="s2">"sender_country"</span><span class="p">:</span> <span class="s2">"CM"</span><span class="p">,</span>
+  <span class="s2">"to_country"</span><span class="p">:</span> <span class="s2">"CM"</span><span class="p">,</span>
+  <span class="s2">"purpose"</span><span class="p">:</span> <span class="s2">"Familial maintenance"</span><span class="p">,</span>
+  <span class="s2">"fund_origin"</span><span class="p">:</span> <span class="s2">"Salary"</span>
+<span class="p">})</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre></div>
+<blockquote>
+<p>this is the response  to the request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2124</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XAF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XAF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-27T12:49:36.066Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-27T12:49:38.873Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_proof"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+237675287689"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"track_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST202103019"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>To request a payment to a peex user by sending his email or mobile_phone</p>
+
+<ul>
+<li><strong>url:</strong> {{base_url}}clients/request_payment </li>
+<li><strong>method:</strong> POST </li>
+<li><p><strong>params:</strong></p>
+
+<ul>
+<li><strong>email:</strong> the user email to whom the payment will be done (required if no 
+mobile_phone) </li>
+<li><strong>mobile_phone:</strong> the user mobile_phone to whom the payment will be done
+(required if no mobile_phone) </li>
+<li><strong>amount:</strong> the amount to be send (required) </li>
+<li><strong>from_currency :</strong> the origins currency (required) </li>
+<li><strong>to_currency:</strong> the destination currency ( optional default xaf )  fxrate : the rate will be use to convert from from_currency to to_currency</li>
+<li><strong>aml_cft :</strong> a key that confirm the validity of the transaction , without it the 
+transaction will not be created </li>
+<li><strong>sender_first_name :</strong> the sender first name (required for the first transaction 
+of this sender) </li>
+<li><strong>sender_last_name :</strong> the sender last name (required for the first transaction of 
+this sender) </li>
+<li><strong>sender_email :</strong> the sender email (not required) </li>
+<li><strong>sender_mobile_phone:</strong> the sender mobile phone (always required) </li>
+<li><strong>sender_country:</strong> Country Code in which the money is sent. ISO Alpha 2
+standard</li>
+<li><strong>first_name:</strong> the beneficiary first name (required) </li>
+<li><strong>last_name:</strong> the beneficiary last name (required)</li>
+<li><strong>to_country:</strong> the beneficiary country in ISO Alpha 2 standard (required)</li>
+<li><strong>purpose:</strong> the reason of this transaction (required for conformity)</li>
+<li><strong>fund_origin:</strong> the fund origin (required for conformity)</li>
+</ul></li>
+<li><p><strong>response:</strong> </p>
+
+<ul>
+<li><strong>status 200:</strong> the transaction objet with the status </li>
+<li><strong>status 404:</strong> the given user is not found in peex platform </li>
+<li><strong>status 422:</strong> the aml_cft params is not set to true</li>
+</ul></li>
+</ul>
+<h2 id='get-all-requests-of-a-client'>Get All requests of a client</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code>
+<span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"json"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">" https://dev-backend.peexit.com/api/v3/clients/all_requests?track_id=TEST2020102301"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"SECRETKEY"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"ea5ebe38-c3cf-4655-999a-eb0c63805a76"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">dump</span><span class="p">({</span>
+
+<span class="p">})</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">SECRETKEY</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">ea5ebe38-c3cf-4655-999a-eb0c63805a76</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2"> https://dev-backend.peexit.com/api/v3/clients/all_requests?track_id=TEST2020102301</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div>
+<blockquote>
+<p>this is the response you will get from the request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">214</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"from_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XAF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"to_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XAF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-23T09:54:06.141Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-27T10:54:42.758Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payment_proof"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMOUNT_EXCEED_THRESHOLD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identifier_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+237691295354"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"track_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST2020102301"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobile"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Return all transactions of the client (determine from your secretkey) </p>
+
+<ul>
+<li><p><strong>url:</strong> “{{base_url}}clients/all_requests” /:track_id&quot; </p></li>
+<li><p><strong>method:</strong> GET </p></li>
+<li><p><strong>params:</strong>  Track_id  and secret key are absolutely needed </p></li>
+<li><p><strong>response:</strong></p>
+
+<ul>
+<li> <strong>status 200:</strong> the transaction objet with the status</li>
+<li> <strong>status 422:</strong> the transaction does not belong to your </li>
+<li> <strong>status 404:</strong> there is not transaction for the given id</li>
+</ul></li>
+</ul>
+<h2 id='formatting'>Formatting</h2>
+<p>We define here the different format of params required by resources.</p>
+
+<ul>
+<li><strong>email:</strong> string on email format. <strong>ex:</strong> testuser@gmail.com </li>
+<li><strong>mobile_phone:</strong> string, complete phone number with country code. <strong>ex:</strong> 
++237678923563 (without spaces nor hyphens). </li>
+<li><strong>amount: double,</strong> the amount which would be transferred to a user. <strong>ex:</strong> 6789.23</li>
+<li><strong>from_currency:</strong> string, the currency in which the amount is send. It is a country 
+currency code. <strong>ex:</strong> USD (Uppercase). </li>
+<li><strong>to_currency:</strong> string, the currency in which the amount will be paid. It is a country 
+currency code. <strong>ex:</strong> XAF (Uppercase). </li>
+<li><strong>fxrate:</strong> double, is the conversion rate from from_currency to to_currency. <strong>ex:</strong> 655.34 </li>
+<li><strong>aml_cft:</strong> boolean, is a value that certified the informations send through the request. ex: true 
+(in the case of payment request, the action will be considered only if aml_cft is set to true). </li>
+<li><strong>status:</strong> string, is informs about a payment request status. Possible value are <strong>(new, pending, 
+paid, failed).</strong> <strong>ex:</strong> new (lowercase).</li>
+</ul>
+<h2 id='possible-transaction-values'>Possible transaction values</h2>
+<table><thead>
+<tr>
+<th>Id</th>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>new</td>
+<td>Transaction reached the PEEX Server</td>
+</tr>
+<tr>
+<td>2</td>
+<td>pending</td>
+<td>The transaction has been paid, awaiting the confirmation identifier</td>
+</tr>
+<tr>
+<td>3</td>
+<td>mw_balance_pending</td>
+<td>There is no enough fund in the peex account to pay this transaction</td>
+</tr>
+<tr>
+<td>4</td>
+<td>balance_pending</td>
+<td>The account does not have enough funds to pay the transaction</td>
+</tr>
+<tr>
+<td>5</td>
+<td>max_amount</td>
+<td>The transaction amount is greater than the maximum allowed</td>
+</tr>
+<tr>
+<td>6</td>
+<td>paid</td>
+<td>Transaction has been PAID and CONFIRM</td>
+</tr>
+<tr>
+<td>7</td>
+<td>failed</td>
+<td>Automatic payment failed, reason is in the PAYMENT_PROOF field</td>
+</tr>
+<tr>
+<td>8</td>
+<td>canceled</td>
+<td>Transaction has been canceled manually, reason is in the PAYMENT_PROOF field</td>
+</tr>
+<tr>
+<td>9</td>
+<td>rejected</td>
+<td>this transaction cannot be processed due to insufficient funds</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
